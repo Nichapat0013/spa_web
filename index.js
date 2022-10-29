@@ -9,8 +9,8 @@ const app = express()
 const port = 3000
 
 const options = {
-  key: fs.readFileSync(CERT_PATH),
-  cert: fs.readFileSync(KEY_PATH),
+  key: fs.readFileSync('./security/cert.key'),
+  cert: fs.readFileSync('./security/cert.pem'),
 };
 
 // Welcome Routes
