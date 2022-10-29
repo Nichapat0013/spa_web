@@ -8,12 +8,12 @@ ST = State
 L = Location
 O = Organization Name
 OU = Organizational Unit 
-CN = www.localhost.com
+CN = 192.168.0.131
 [v3_req]
 keyUsage = critical, digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = www.localhost.com
-DNS.2 = localhost.com
-DNS.3 = localhost
+DNS.1 = 192.168.0.131
+DNS.2 = 192.168.0.131
+DNS.3 = 192.168.0.131
