@@ -3,7 +3,7 @@ distinguished_name = req_distinguished_name
 x509_extensions = v3_req
 prompt = no
 [req_distinguished_name]
-C = Country initials like US, RO, GE
+C = TH
 ST = State
 L = Location
 O = Organization Name
