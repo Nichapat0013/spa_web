@@ -1,9 +1,17 @@
 const { MongoClient, ObjectId } = require('mongodb')
 const client = new MongoClient('mongodb://127.0.0.1:27017')
 
+const https = require('https');
+const fs = require('fs');
+
 const express = require('express')
 const app = express()
 const port = 3000
+
+const options = {
+  key: fs.readFileSync(CERT_PATH),
+  cert: fs.readFileSync(KEY_PATH),
+};
 
 // Welcome Routes
 app.get('/', async (req, res) => {
