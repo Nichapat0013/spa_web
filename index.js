@@ -10,7 +10,7 @@ const app = express()
 
 const options = {
   key: fs.readFileSync('./security/cert.key', 'utf-8'),
-  cert: fs.readFileSync('./security/cert.pem', 'utft-8'),
+  cert: fs.readFileSync('./security/cert.pem', 'utf-8'),
 }
 
 const credentials = {key: options.key, cert: options.cert}
