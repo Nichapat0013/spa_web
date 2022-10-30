@@ -1,17 +1,19 @@
 const { MongoClient, ObjectId } = require('mongodb')
 const client = new MongoClient('mongodb://127.0.0.1:27017')
 
-const https = require('https');
-const fs = require('fs');
+const http = require('http')
+const https = require('https')
+const fs = require('fs')
 
 const express = require('express')
 const app = express()
-const port = 3000
 
 const options = {
-  key: fs.readFileSync('./security/cert.key'),
-  cert: fs.readFileSync('./security/cert.pem'),
-};
+  key: fs.readFileSync('./security/cert.key', 'utf-8'),
+  cert: fs.readFileSync('./security/cert.pem', 'utft-8'),
+}
+
+const credentials = {key: options.key, cert: options.cert}
 
 // Welcome Routes
 app.get('/', async (req, res) => {
@@ -58,7 +60,11 @@ app.delete('/users/:id', async (req, res) => {
 })
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
+const httpServer = http.createServer(app).listen(3000, () => console.log('Start http app on port 3000'))
+const httpsServer = https.createServer(app).listen(3001, () => console.log('Start https app on port 3001'))
+
+// app.listen(port, () => {
+  // console.log(`Example app listening on port ${port}`)
+// })
 
